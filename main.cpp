@@ -46,10 +46,12 @@ int main() {
                 while (true) {
                     std::cout << "Выберите опцию для редактирования, s для просмотра текущих настроек или q для выхода: ";
                     std::cin >> userAnswer;
+		    ignoreBuffer();
                     if (userAnswer == '1') {
                         while (true) {
                             std::cout << "Выберите диапазон загадываемых значений (от - до).\nПример ввода - 0 100: ";
                             std::cin >> from >> to;
+			    ignoreBuffer();
                             if ((from + 2) >= to) {
                                 std::cout << "Диапазон должен быть больше 1.\n";
                             }
@@ -100,7 +102,7 @@ int main() {
             
             ignoreBuffer();
             if (userNumber > to || userNumber < from) {
-                std::cout << "Число вылезает за диапазон. Попробуйте еще раз\n";
+                std::cout << "Число не в диапазоне. Попробуйте еще раз\n";
                 i++;
                 continue;
             }
