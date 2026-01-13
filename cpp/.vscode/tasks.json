@@ -10,7 +10,7 @@
           "args": ["-c"]
         }
       },
-      "command": "mkdir -p build && cd \"${workspaceFolder}\" && g++ -g -I\"${workspaceFolder}\" $(find . -name '*.cpp') -std=c++20 -O2 -o build/${workspaceFolderBasename}",
+      "command": "mkdir -p build && cd \"${workspaceFolder}\" && g++ -g -I\"${workspaceFolder}\" $(find . -name '*.cpp') -std=c++20 -O2 -o build/build_${workspaceFolderBasename}",
       "problemMatcher": ["$gcc"],
       "presentation": {
         "reveal": "always",

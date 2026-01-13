@@ -5,7 +5,7 @@
       "name": "C++ Launch (g++ - project)",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/${workspaceFolderBasename}",
+      "program": "${workspaceFolder}/build/build_${workspaceFolderBasename}",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
