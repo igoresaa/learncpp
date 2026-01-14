@@ -1,35 +1,17 @@
 #include <iostream>
 #include "base.h"
 
-std::string_view lang{};
+std::string lang{};
 
-std::string_view getLang()
+std::string getLang()
 {
     return lang;
 }
 
 int main()
 {
-    std::cout << "Welcome to smile OS 1.0!\nEnter a launguage:\n"
-              << "1). English\n"
-              << "2). Русский (Russian)\n";
+    lang = langService("check");
     std::string inp{};
-    while (true)
-    {
-        std::cout << "> ";
-        std::cin >> inp;
-        lang = chek(inp, "lang");
-        if (lang == "en")
-        {
-            std::cout << "English\n";
-            break;
-        }
-        else if (lang == "ru")
-        {
-            std::cout << "Выбран русский язык\n";
-            break;
-        }
-    }
     if (lang == "ru")
     {
         std::cout << "Для получения справки введите help.\n";
@@ -43,6 +25,7 @@ int main()
     isAutorized = true, hasAccount = true;
     while (true) // обработчик
     {
+    lang = langService("check");
         std::cerr << "user::" << getUserName() << "\n> ";
         std::cin >> inp;
         chek(inp, "command");

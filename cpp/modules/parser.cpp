@@ -25,6 +25,10 @@ std::string_view chek(std::string_view str, std::string_view r) // r - режи�
         {
             std::cout << getUserName() << '\n';
         }
+        else if (str == "changeLang")
+        {
+            langService("change");
+        }
         else
         {
             if (lang == "en")
