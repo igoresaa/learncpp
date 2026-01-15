@@ -16,7 +16,7 @@ std::string_view chek(std::string_view str, std::string_view r) // r - режи�
         {
             std::cout << lang << '\n';
         }
-        else if (str == "guesTheNumber")
+        else if (str == "gtn")
         {
             std::string cmd{"./bin/games/guesTheNumber " + lang};
             std::system(cmd.c_str());
@@ -29,6 +29,10 @@ std::string_view chek(std::string_view str, std::string_view r) // r - режи�
         {
             langService("change");
         }
+        else if (str == "fsreader")
+        {
+            std::system("./bin/fsreader example.txt -create");
+        }
         else
         {
             if (lang == "en")
@@ -37,7 +41,7 @@ std::string_view chek(std::string_view str, std::string_view r) // r - режи�
             }
             if (lang == "ru")
             {
-                std::cout << '\n' << "Команда не найдена!\n";
+                std::cout << "Команда не найдена!\n";
             }
         }
     }

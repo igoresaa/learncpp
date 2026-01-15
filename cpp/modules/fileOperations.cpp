@@ -10,5 +10,3 @@ void createConfig(std::string_view str, std::string filename)
     }
     file << str;
 }
-
-

@@ -10,13 +10,17 @@
 //     if (lang == "en")
 //     {
 //         std::cout << "Help section:\n"
-//                   << "guesTheNumber: a small game of guessing the number.\n";
+//                   << "whoami: find out the current user's name.\n"
+//                   << "changeLang: change the system language.\n"
+//                   << "gtn: play a short game to guess the number.\n";
 //     }
 //     if (lang == "ru")
 //     {
 //         std::cout << "Раздел помощь:\n"
-//                   << "guesTheNumber: небольшая игра угадай число.\n";
+//                   << "whoami: узнать имя текущего пользователя.\n"
+//                   << "changeLang: изменить системный язык.\n"
+//                   << "gtn: небольшая игра угадай число.\n";
 //     }
-    
+
 //     return 0;
 // }

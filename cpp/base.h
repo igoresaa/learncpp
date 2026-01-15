@@ -8,4 +8,5 @@ bool loginManager(bool isAutorized, bool hasAccount);
 std::string getUserName();
 void createConfig(std::string_view str, std::string filename);
 std::string langService(std::string_view r);
+bool trustUsername();
 #endif

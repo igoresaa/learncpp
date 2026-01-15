@@ -1,14 +1,32 @@
 #include <iostream>
 #include "base.h"
 std::string userName{};
+std::string password{};
 std::string getUserName()
 {
     return userName;
 }
 
+bool trustUsername()
+{
+    std::ifstream usernameCache("username.login");
+    if (!usernameCache)
+    {
+        return loginManager(false, false);
+    }
+    std::getline(usernameCache, userName);
+    usernameCache.close();
+    std::ifstream passCache("password.login");
+    if (!passCache)
+    {
+        return loginManager(false, false);
+    }
+    std::getline(passCache, password);
+    return loginManager(false, true);
+}
+
 bool loginManager(bool isAutorized, bool hasAccount)
 {
-    std::string password{};
     if (isAutorized)
     {
         return true;
@@ -54,10 +72,16 @@ bool loginManager(bool isAutorized, bool hasAccount)
             std::cout << "Введите логин: ";
             std::cin >> userInput;
             userName = userInput;
+            std::ofstream createUserCache("username.login");
+            createUserCache << userName;
+            createUserCache.close();
             std::cout << "Введите пароль: ";
             std::string userInput2{};
             std::cin >> userInput2;
             password = userInput2;
+            std::ofstream createPassCache("password.login");
+            createPassCache << password;
+            createPassCache.close();
             return true;
         }
     }
